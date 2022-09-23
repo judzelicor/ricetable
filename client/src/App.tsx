@@ -1,22 +1,27 @@
-import { useState } from 'react'
 import {
   Routes, 
   Route
 } from "react-router-dom";
-import { Footer } from './components/Footer';
+import { 
+  Footer 
+} from './components/Footer';
 import {
   Homepage,
-  Login
+  LoginPage,
+  SignupPage,
+  Error404Page
 } from "./pages";
 
-function App() {
-  const [count, setCount] = useState(0)
+import "./index.css";
 
+function App() {
   return (
     <>
       <Routes>
         <Route path={ "/" } element={ <Homepage /> } />
-        <Route path={ "/login" } element={ <Login /> } />
+        <Route path={ "/login" } element={ <LoginPage /> } />
+        <Route path={ "/signup" } element={ <SignupPage /> } />
+        <Route path={ "*" } element={ <Error404Page /> } />
       </Routes>
       <Footer />
     </>

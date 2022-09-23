@@ -1,0 +1,107 @@
+.signupPageColumn__jH7i {
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 100%;
+}
+
+.container__jH7i {
+    height: 100vh;
+}
+
+.signupLeftColumn__jH7i {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.signupPageRightColumn__jH7i {
+    align-items: center;
+    background-color: #A83731;
+    color: #E7DFC6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.rightColumnTitle__jH7i {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.formGenericInput__jH7i {
+    border-radius: 7px;
+    box-shadow: 0 0 0 1px #cbd5e1;
+    color: #A83731;
+    font-size: 14px;
+    padding: 9px;
+    transition: 500ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.formGenericInput__jH7i::placeholder {
+    text-transform: none;
+}
+
+.formGenericInput__jH7i:active,
+.formGenericInput__jH7i:hover,
+.formGenericInput__jH7i:focus {
+    box-shadow: 0 0 0 1px #A83731;
+}
+
+.signupFormButton__jH7i {
+    background-color: #A83731;
+    border-radius: 7px;
+    color: #E7DFC6;
+    font-size: 14px;
+    font-weight: bold;
+    height: 40px;
+    width: 128px;
+}
+
+.homeButton__jH7i {
+    align-items: center;
+    border-radius: 7px;
+    cursor: pointer;
+    display: flex;
+    left: 25px;
+    padding: 9px 18px;
+    position: absolute;
+    top: 25px;
+    transition: 500ms cubic-bezier(0.25, 1, 0.5, 1);
+    width: fit-content;
+    z-index: 1;
+}
+
+.homeButton__jH7i:hover {
+    background-color: #e2e8f0;
+}
+
+.homeButtonIcon__jH7i {
+    width: 9px;
+    margin-right: 3px;
+    transition: 500ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.homeButton__jH7i:hover .homeButtonIcon__jH7i {
+    transform: translateX(-3px);
+}
+
+@media only screen and (min-width: 768px) {
+    .signupPageColumn__jH7i {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .rightColumnTitle__jH7i {
+        font-size: 48px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .signupPageColumn__jH7i {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .rightColumnTitle__jH7i {
+        font-size: 72px;
+    }
+}

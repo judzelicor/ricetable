@@ -1,9 +1,66 @@
 @font-face {
     font-family: "Satoshi";
     src: url(/assets/fonts/Satoshi-Variable.ttf) format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Satoshi";
+    src: url(/assets/fonts/Satoshi-Variable.ttf) format("truetype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Satoshi";
+    src: url(/assets/fonts/Satoshi-Variable.ttf) format("truetype");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Satoshi";
+    src: url(/assets/fonts/Satoshi-Variable.ttf) format("truetype");
+    font-weight: 700;
 }
 
 body,
 html {
     font-family: "Satoshi";
+}
+
+ul,
+ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+input {
+    outline: none;
+    width: 100%;
+}
+
+img {
+    object-fit: cover;
+    width: 100%;
+}
+
+.flex {
+    display: flex;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.gap-21 {
+    gap: 21px;
+}
+
+.formGroup {
+    margin-bottom: 18px;
 }
