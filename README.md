@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img src="./docs/assets/ricetable-logo.svg" />
+    <img src="./docs/assets/ricetable-logo.svg" width=480 />
 </h1>
 <h2>
     <b>What is Ricetable?</b>
