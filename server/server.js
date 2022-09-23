@@ -1,25 +1,43 @@
 import express from "express";
+
+import { 
+    resolve 
+} from "path";
+
 import dotenv from "dotenv";
-import path from "path";
+
+dotenv.config({path: resolve(".env.local")});
+
+import database from "./database/database.js";
+ 
 import {
     errorHandlerMiddleware,
     notFoundMiddleware
 } from "./middlewares/index.js";
 
-dotenv.config({
-    path: path.resolve(".env.local")
-});
-
-const PORT = process.env.PORT;
 const app = express();
+const PORT = process.env.PORT;
 
 // Middleware to handle non-existent routes
 app.use("*", notFoundMiddleware);
 
 // Middleware to handle errors in exisiting routes
-app.use(errorHandlerMiddleware)
+app.use(errorHandlerMiddleware);
 
-// Allow Express to listen to requests to the server
-app.listen(PORT, () => {
-    console.log(`Rictable server is listening on port: ${ PORT }`)
-});
+async function main() {
+    try {
+        // Attemot to connect to MongoDB Database
+        await database.connect();
+    
+        // Allow Express to listen to requests to the server
+        app.listen(PORT, () => {
+            console.log(`Ricetable server is listening on port: ${ PORT }`);
+        });
+    }
+    
+    catch(error) {
+        console.log(error);
+    }
+}
+
+main();
