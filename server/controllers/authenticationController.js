@@ -1,5 +1,14 @@
-function register(request, response) {
-    response.send("User sucessfully registered!")
+import { UserModel } from "../models/index.js";
+
+async function register(request, response, next) {
+    try {
+        const user = await UserModel.create(request.body);
+
+        response.status(201).json({ user });
+    }
+    catch(error) {
+        next(error);
+    }
 }
 
 function login(request, response) {

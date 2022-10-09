@@ -17,7 +17,7 @@ import {
 
 import {
     authenticationRouter,
-    jobsRouter
+    jobApplicationsRoutes,
 } from "./routes/index.js";
 
 const app = express();
@@ -26,14 +26,14 @@ const PORT = process.env.PORT;
 // Enable json data to be read from the body
 app.use(express.json());
 
+app.use("/api/v1/authentication", authenticationRouter);
+app.use("/api/v1/job-applications", jobApplicationsRoutes);
+
 // Middleware to handle non-existent routes
 app.use("*", notFoundMiddleware);
 
 // Middleware to handle errors in exisiting routes
 app.use(errorHandlerMiddleware);
-
-app.use("/api/v1/authentication", authenticationRouter);
-app.use("/api/v1/jobs", jobsRouter);
 
 async function main() {
     try {

@@ -1,2 +1,2 @@
 export * from "./authenticationController.js";
-export * from "./jobsController.js";
+export * from "./jobApplicationsController.js";
